@@ -1,5 +1,5 @@
-import { createInertiaApp } from '@inertiajs/vue3'
-import { createApp, h } from 'vue'
+import { createInertiaApp } from "@inertiajs/vue3";
+import { createApp, h } from "vue";
 
 createInertiaApp({
   // Set default page title
@@ -13,10 +13,10 @@ createInertiaApp({
   // progress: false,
 
   resolve: (name) => {
-    const pages = import.meta.glob('../pages/**/*.vue', {
+    const pages = import.meta.glob("../pages/**/*.vue", {
       eager: true,
-    })
-    return pages[`../pages/${name}.vue`]
+    });
+    return pages[`../pages/${name}.vue`];
 
     // To use a default layout, import the Layout component
     // and use the following lines.
@@ -30,6 +30,6 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
-      .mount(el)
+      .mount(el);
   },
-})
+});
